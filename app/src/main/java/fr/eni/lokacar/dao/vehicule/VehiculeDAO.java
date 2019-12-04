@@ -30,6 +30,8 @@ public class VehiculeDAO {
         values.put(VehiculeContract.COL_IMMATRICULATION, vehicule.getImmatriculation());
         values.put(VehiculeContract.COL_MODELE, vehicule.getModele().getId());
         values.put(VehiculeContract.COL_PRIX, vehicule.getPrixParJour());
+        int isLoue = vehicule.isLoue() ? 1 : 0;
+        values.put(VehiculeContract.COL_IS_LOUE, isLoue);
 
         return db.insert(VehiculeContract.TABLE_NAME,null,values);
     }
@@ -41,17 +43,43 @@ public class VehiculeDAO {
         values.put(VehiculeContract.COL_IMMATRICULATION, vehicule.getImmatriculation());
         values.put(VehiculeContract.COL_MODELE, vehicule.getModele().getId());
         values.put(VehiculeContract.COL_PRIX, vehicule.getPrixParJour());
+        int isLoue = vehicule.isLoue() ? 1 : 0;
+        values.put(VehiculeContract.COL_IS_LOUE, isLoue);
 
         return db.update(VehiculeContract.TABLE_NAME, values,VehiculeContract.COL_ID + "=?",new
                 String[]{String.valueOf(vehicule.getId())})>0;
     }
+
+    public Vehicule get(long id){
+        Vehicule vehicule = null;
+        Cursor cursor = db.query(
+                VehiculeContract.TABLE_NAME,
+                new String[]{VehiculeContract.COL_ID,VehiculeContract.COL_IMMATRICULATION, VehiculeContract.COL_MODELE, VehiculeContract.COL_PRIX, VehiculeContract.COL_IS_LOUE},
+                VehiculeContract.COL_ID + " =?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null);
+        if(cursor.moveToNext())
+        {
+            vehicule = new Vehicule();
+            vehicule.setId(cursor.getInt(cursor.getColumnIndex(VehiculeContract.COL_ID)));
+            vehicule.setImmatriculation(cursor.getString(cursor.getColumnIndex(VehiculeContract.COL_IMMATRICULATION)));
+            vehicule.setPrixParJour(cursor.getFloat(cursor.getColumnIndex(VehiculeContract.COL_PRIX)));
+            Modele modele = Modele.values()[cursor.getInt(cursor.getColumnIndex(VehiculeContract.COL_MODELE))];
+            vehicule.setModele(modele);
+            vehicule.setLoue(cursor.getInt(cursor.getColumnIndex(VehiculeContract.COL_IS_LOUE)) == 1);
+        }
+        return vehicule;
+    }
+
 
     public List<Vehicule> getAll()
     {
         List<Vehicule> resultat = new ArrayList<>();
         Cursor cursor = db.query(
                 VehiculeContract.TABLE_NAME,
-                new String[]{VehiculeContract.COL_ID,VehiculeContract.COL_IMMATRICULATION, VehiculeContract.COL_MODELE, VehiculeContract.COL_PRIX},
+                new String[]{VehiculeContract.COL_ID,VehiculeContract.COL_IMMATRICULATION, VehiculeContract.COL_MODELE, VehiculeContract.COL_PRIX, VehiculeContract.COL_IS_LOUE},
                 null,
                 null,
                 null,
@@ -68,7 +96,7 @@ public class VehiculeDAO {
 
             // Pour les photos et pour savoir si la voiture est louée, on va vérifier dans d'autre tables.
             vehicule.setPhotos(new ArrayList<String>());
-            vehicule.setLouee(false);
+            vehicule.setLoue(cursor.getInt(cursor.getColumnIndex(VehiculeContract.COL_IS_LOUE)) == 1);
 
             resultat.add(vehicule);
         }

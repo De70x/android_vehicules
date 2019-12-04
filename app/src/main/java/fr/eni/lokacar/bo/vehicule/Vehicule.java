@@ -15,7 +15,7 @@ public class Vehicule implements Parcelable {
     private String immatriculation;
     private float prixParJour;
     private List<String> photos;
-    private boolean isLouee;
+    private boolean isLoue;
 
     public Modele getModele() {
         return modele;
@@ -57,19 +57,19 @@ public class Vehicule implements Parcelable {
         this.photos = photos;
     }
 
-    public boolean isLouee() {
-        return isLouee;
+    public boolean isLoue() {
+        return isLoue;
     }
 
-    public void setLouee(boolean louee) {
-        isLouee = louee;
+    public void setLoue(boolean loue) {
+        isLoue = loue;
     }
 
     public Vehicule(){
         setModele(Modele.CLIO);
         setPrixParJour(0.0f);
         setPhotos(new ArrayList<String>());
-        setLouee(Boolean.FALSE);
+        setLoue(Boolean.FALSE);
     }
 
     public static final Creator<Vehicule> CREATOR = new Creator<Vehicule>() {
@@ -95,7 +95,7 @@ public class Vehicule implements Parcelable {
         immatriculation = in.readString();
         prixParJour = in.readFloat();
         photos = in.createStringArrayList();
-        isLouee = in.readInt() == 1;
+        isLoue = in.readInt() == 1;
     }
 
     @Override
@@ -106,6 +106,6 @@ public class Vehicule implements Parcelable {
         dest.writeString(immatriculation);
         dest.writeFloat(prixParJour);
         dest.writeStringList(photos);
-        dest.writeInt(isLouee ? 1 : 0);
+        dest.writeInt(isLoue ? 1 : 0);
     }
 }

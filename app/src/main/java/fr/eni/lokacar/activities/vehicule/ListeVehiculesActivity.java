@@ -37,9 +37,9 @@ public class ListeVehiculesActivity extends AppCompatActivity implements Vehicul
 
     @Override
     public void onInteraction(Vehicule vehicule) {
-/*        Intent intent = new Intent(this, DetailVehiculeActivity.class);
+        Intent intent = new Intent(this, DetailVehiculeActivity.class);
         intent.putExtra("vehicule", vehicule);
-        startActivity(intent);*/
+        startActivity(intent);
     }
 
     @Override

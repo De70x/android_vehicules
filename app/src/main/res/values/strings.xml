@@ -13,4 +13,9 @@
     <string name="aucun_client_selectionne">Aucun client sélectionné</string>
     <string name="date_debut">Date de début</string>
     <string name="date_fin">Date de fin</string>
+    <string name="nom">nom</string>
+    <string name="pr_nom">Prénom</string>
+    <string name="mail">mail</string>
+    <string name="adresse">Adresse</string>
+    <string name="t_l_phone">Téléphone</string>
 </resources>

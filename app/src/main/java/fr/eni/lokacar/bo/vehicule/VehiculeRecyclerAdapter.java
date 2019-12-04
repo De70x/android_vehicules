@@ -1,20 +1,17 @@
 package fr.eni.lokacar.bo.vehicule;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.File;
 import java.text.NumberFormat;
 import java.util.List;
 
@@ -32,7 +29,6 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
         TextView immatriculation;
         ImageView photo;
         ImageButton isLouee;
-        RatingBar note;
 
         public VehiculeRecyclerViewHolder(View v){
             super(v);
@@ -98,13 +94,14 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
 
         /*** IMAGE BOUTON LOCATION ***/
         // si la voiture est louée on affiche la voiture rouge, sinon on affiche la verte
-        if(mDataSet.get(position).isLouee()){
+        if(mDataSet.get(position).isLoue()){
+            Log.d("VEHICULE", mDataSet.get(position).toString());
             holder.isLouee.setImageResource(R.drawable.voiture_louee);
             holder.isLouee.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // Il faut faire revenir le vehicule. Donc on met une date de fin à la location
-                    // on passe le isLouee à false
+                    // on passe le isLoue à false
                     Intent intent = new Intent(v.getContext(), RetourLocationActivity.class);
                     intent.putExtra("vehicule", mDataSet.get(position));
                     v.getContext().startActivity(intent);
@@ -112,12 +109,14 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
             });
         }
         else{
+            Log.d("VEHICULE", "NON LOUE");
             holder.isLouee.setImageResource(R.drawable.voiture_libre);
             holder.isLouee.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // On ouvre la page de création de la location
                     Intent intent = new Intent(v.getContext(), DebuterLocationActivity.class);
+                    Log.d("VEHICULEEXTRA", mDataSet.get(position).toString());
                     intent.putExtra("vehicule", mDataSet.get(position));
                     v.getContext().startActivity(intent);
                 }

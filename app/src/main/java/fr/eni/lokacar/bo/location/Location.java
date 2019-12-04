@@ -17,6 +17,53 @@ public class Location implements Parcelable {
     private Date dateDebut;
     private Date dateFin;
 
+    public Location(){
+        vehicule = null;
+        client = null;
+        dateDebut = new Date();
+        dateFin = null;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Vehicule getVehicule() {
+        return vehicule;
+    }
+
+    public void setVehicule(Vehicule vehicule) {
+        this.vehicule = vehicule;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Date getDateDebut() {
+        return dateDebut;
+    }
+
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
+    }
+
+    public Date getDateFin() {
+        return dateFin;
+    }
+
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
+    }
+
     protected Location(Parcel in) {
         id = in.readInt();
         vehicule = in.readParcelable(Vehicule.class.getClassLoader());
