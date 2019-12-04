@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LokaCar</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_connexion">Connexion</string>
+    <string name="marque_modele">Marque / Modèle</string>
+    <string name="prix_defaut">Prix par jour : 17,17€</string>
+    <string name="plaque_defaut">AA-123-AA</string>
+    <string name="ajouter_vehicule">Ajouter un véhicule au parc</string>
+    <string name="valider">Valider</string>
+    <string name="annuler">Annuler</string>
+    <string name="nouveau_client">Nouveau client</string>
+    <string name="client_existant">Client existant</string>
+    <string name="aucun_client_selectionne">Aucun client sélectionné</string>
+    <string name="date_debut">Date de début</string>
+    <string name="date_fin">Date de fin</string>
+</resources>

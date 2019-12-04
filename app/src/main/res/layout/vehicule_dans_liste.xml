@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/article"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    android:layout_margin="10dp"
+    tools:context="fr.eni.lokacar.activities.vehicule.ListeVehiculesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/marque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/marque_modele"
+            android:textStyle="bold"
+            android:textSize="27sp"/>
+
+        <TextView
+            android:id="@+id/immatriculation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plaque_defaut" />
+
+        <TextView
+            android:id="@+id/prix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prix_defaut" />
+
+        <ImageButton
+            android:id="@+id/isLouee"
+            android:layout_width="77dp"
+            android:layout_height="77dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/voiture_libre"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/photoPrincipale"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_margin="5dp"/>
+
+
+
+</androidx.cardview.widget.CardView>
