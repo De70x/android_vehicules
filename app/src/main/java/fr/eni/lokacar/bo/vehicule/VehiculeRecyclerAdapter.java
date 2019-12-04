@@ -95,7 +95,6 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
         /*** IMAGE BOUTON LOCATION ***/
         // si la voiture est louée on affiche la voiture rouge, sinon on affiche la verte
         if(mDataSet.get(position).isLoue()){
-            Log.d("VEHICULE", mDataSet.get(position).toString());
             holder.isLouee.setImageResource(R.drawable.voiture_louee);
             holder.isLouee.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -109,14 +108,12 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
             });
         }
         else{
-            Log.d("VEHICULE", "NON LOUE");
             holder.isLouee.setImageResource(R.drawable.voiture_libre);
             holder.isLouee.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // On ouvre la page de création de la location
                     Intent intent = new Intent(v.getContext(), DebuterLocationActivity.class);
-                    Log.d("VEHICULEEXTRA", mDataSet.get(position).toString());
                     intent.putExtra("vehicule", mDataSet.get(position));
                     v.getContext().startActivity(intent);
                 }

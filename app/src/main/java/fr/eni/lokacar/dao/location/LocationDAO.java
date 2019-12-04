@@ -43,7 +43,6 @@ public class LocationDAO {
 
         vehiculeDAO.update(vehicule);
 
-        values.put(LocationContract.COL_ID, location.getId());
         values.put(LocationContract.COL_CLIENT_ID, location.getClient().getId());
         values.put(LocationContract.COL_VEHICULE_ID, location.getVehicule().getId());
         values.put(LocationContract.COL_DEBUT, location.getDateDebut().getTime());

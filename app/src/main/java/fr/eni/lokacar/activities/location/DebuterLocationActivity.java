@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 import fr.eni.lokacar.R;
@@ -74,11 +75,14 @@ public class DebuterLocationActivity extends AppCompatActivity implements DatePi
     }
 
     public void creerLocation(View view) {
-        Intent intentSource = getIntent();
-        long dateDebut = intentSource.getLongExtra("dateDebut", 0);
-        long dateFin = intentSource.getLongExtra("dateFin", 0);
-        Vehicule vehicule = intentSource.getParcelableExtra("vehicule");
-        Client client = intentSource.getParcelableExtra("client");
+        if(this.dateDebut == null)
+            dateDebut = new Date();
+        long dateDebut = this.dateDebut.getTime();
+        if(this.dateFin == null)
+                dateFin = new GregorianCalendar(3000,1,1).getTime();
+        long dateFin = this.dateFin.getTime();
+        Vehicule vehicule = this.vehicule;
+        Client client = this.client;
         Location location = new Location();
 
         location.setDateDebut(new Date(dateDebut));
