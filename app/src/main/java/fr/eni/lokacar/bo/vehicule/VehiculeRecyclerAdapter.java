@@ -1,7 +1,9 @@
 package fr.eni.lokacar.bo.vehicule;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,9 @@ import java.util.List;
 import fr.eni.lokacar.R;
 import fr.eni.lokacar.activities.location.DebuterLocationActivity;
 import fr.eni.lokacar.activities.location.RetourLocationActivity;
+import fr.eni.lokacar.bo.vehicule.photo.Photo;
 import fr.eni.lokacar.dao.location.LocationDAO;
+import fr.eni.lokacar.dao.vehicule.photos.PhotoDAO;
 
 public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecyclerAdapter.VehiculeRecyclerViewHolder> {
     private List<Vehicule> mDataSet;
@@ -68,6 +72,7 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
     public void onBindViewHolder(@NonNull VehiculeRecyclerViewHolder holder, final int position) {
 
         LocationDAO locationDAO = new LocationDAO((Context)action);
+        PhotoDAO photoDAO = new PhotoDAO((Context)action);
 
         /*** MARQUE / MODELE ***/
         String marqueModele = mDataSet.get(position).getModele().getMarque().toString() + " / " + mDataSet.get(position).getModele().toString();
@@ -86,16 +91,12 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
         holder.immatriculation.setText(mDataSet.get(position).getImmatriculation());
 
         /*** PHOTO ***/
-/*        // On récupère le path de la première image
-        String filepath = mDataSet.get(position).getPhotos().get(0);
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 8; // down sizing image as it throws OutOfMemory  Exception for larger images
-        filepath = filepath.replace("file://", ""); // remove to avoid  BitmapFactory.decodeFile return null
-        File imgFile = new File(filepath);
-        if (imgFile.exists()) {
-            Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(),  options);
-            holder.photo.setImageBitmap(bitmap);
-        }*/
+        // On récupère le path de la première image
+        List<Photo> photosVehicule = photoDAO.getPhotosVehicule((long)mDataSet.get(position).getId());
+        if(photosVehicule.size() != 0) {
+            Bitmap photoBitmap = photosVehicule.get(0).getImagePhoto();
+            holder.photo.setImageBitmap(photoBitmap);
+        }
 
         /*** IMAGE BOUTON LOCATION ***/
         // si la voiture est louée on affiche la voiture rouge, sinon on affiche la verte

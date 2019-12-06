@@ -51,9 +51,10 @@
     <ImageView
         android:id="@+id/photoPrincipale"
         android:layout_width="150dp"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:layout_gravity="end"
         android:scaleType="fitXY"
+        android:onClick="swapPhoto"
         android:src="@mipmap/ic_launcher_round"
         android:layout_margin="5dp"/>
 

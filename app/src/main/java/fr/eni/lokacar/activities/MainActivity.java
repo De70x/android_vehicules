@@ -5,13 +5,12 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import fr.eni.lokacar.R;
-import fr.eni.lokacar.activities.photos.PhotosActivity;
+import fr.eni.lokacar.activities.vehicule.photo.PhotoActivity;
 import fr.eni.lokacar.activities.vehicule.ListeVehiculesActivity;
 
 public class  MainActivity extends AppCompatActivity {
@@ -53,7 +52,7 @@ public class  MainActivity extends AppCompatActivity {
     }
 
     public void prisePhoto(View view) {
-        Intent intent = new Intent(this, PhotosActivity.class);
+        Intent intent = new Intent(this, PhotoActivity.class);
         startActivity(intent);
     }
 }

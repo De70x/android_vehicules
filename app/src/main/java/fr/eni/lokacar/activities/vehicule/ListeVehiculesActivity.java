@@ -1,17 +1,20 @@
 package fr.eni.lokacar.activities.vehicule;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Date;
-
 import fr.eni.lokacar.R;
+import fr.eni.lokacar.activities.vehicule.photo.PhotoActivity;
 import fr.eni.lokacar.bo.vehicule.Vehicule;
 import fr.eni.lokacar.bo.vehicule.VehiculeRecyclerAdapter;
 import fr.eni.lokacar.dao.vehicule.VehiculeDAO;
@@ -40,7 +43,7 @@ public class ListeVehiculesActivity extends AppCompatActivity implements Vehicul
 
     @Override
     public void onInteraction(Vehicule vehicule) {
-        Intent intent = new Intent(this, DetailVehiculeActivity.class);
+        Intent intent = new Intent(this, PhotoActivity.class);
         intent.putExtra("vehicule", vehicule);
         startActivity(intent);
     }
@@ -54,6 +57,11 @@ public class ListeVehiculesActivity extends AppCompatActivity implements Vehicul
         Intent intent = new Intent(this, AjouterVehiculeActivity.class);
         intent.putExtra("vehicule", new Vehicule());
         intent.putExtra("creation", true);
+        startActivity(intent);
+    }
+
+    public void swapPhoto(View view) {
+        Intent intent = new Intent(view.getContext(), DetailVehiculeActivity.class);
         startActivity(intent);
     }
 }

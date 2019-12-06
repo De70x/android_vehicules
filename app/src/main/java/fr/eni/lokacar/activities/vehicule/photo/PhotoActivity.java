@@ -1,4 +1,4 @@
-package fr.eni.lokacar.activities.photos;
+package fr.eni.lokacar.activities.vehicule.photo;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -23,8 +23,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import fr.eni.lokacar.R;
+import fr.eni.lokacar.activities.vehicule.ListeVehiculesActivity;
+import fr.eni.lokacar.bo.vehicule.Vehicule;
+import fr.eni.lokacar.bo.vehicule.photo.Photo;
+import fr.eni.lokacar.dao.vehicule.photos.PhotoDAO;
 
-public class PhotosActivity extends AppCompatActivity {
+public class PhotoActivity extends AppCompatActivity {
 
     // Constante
     private static final int RETOUR_PRISE_PHOTO = 1;
@@ -32,15 +36,16 @@ public class PhotosActivity extends AppCompatActivity {
     private Button prendrePhoto;
     private ImageView photoAffichee;
     private String photoPath;
-    private String photoRelativePath;
     private Button sauverPhoto;
-    private Bitmap image;
+    private Bitmap photoBitmap;
+    private Vehicule vehicule;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photo_prendre);
+        vehicule = getIntent().getParcelableExtra("vehicule");
         initActivity();
     }
 
@@ -49,21 +54,24 @@ public class PhotosActivity extends AppCompatActivity {
         photoAffichee = findViewById(R.id.photo_affichee);
         sauverPhoto = findViewById(R.id.save_photo);
         createOnClicPrendrePhoto();
+        createOnClicSauverPhoto();
     }
 
     // https://www.codota.com/code/java/methods/android.content.ContentValues/put
     // Il faut peut être passé par objet puis DAO pour Blober l'image
     private void createOnClicSauverPhoto(){
+
         sauverPhoto.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ContentValues cv = new ContentValues();
-                    cv.put(MediaStore.MediaColumns.DISPLAY_NAME, "nom image");
-                    cv.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { //this one
-                        cv.put(MediaStore.MediaColumns.RELATIVE_PATH, photoRelativePath);
-                        cv.put(MediaStore.MediaColumns.IS_PENDING, 1);
-                    }
+                PhotoDAO photoDAO = new PhotoDAO(v.getContext());
+                Photo photo = new Photo();
+                photo.setPath(photoPath);
+                photo.setVehicule(vehicule);
+                photo.setImagePhoto(photoBitmap);
+                photoDAO.insert(photo);
+                Intent intent = new Intent(v.getContext(), ListeVehiculesActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -90,9 +98,8 @@ public class PhotosActivity extends AppCompatActivity {
                 File photoFile = File.createTempFile("photo"+time, ".jpg", photoDir);
                 // enregistrer le chemin complet
                 photoPath = photoFile.getAbsolutePath();
-                photoRelativePath = photoFile.getPath();
                 // utilisation du provider pour créer l'URI
-                Uri photoUri = FileProvider.getUriForFile(PhotosActivity.this, PhotosActivity.this.getApplicationContext().getPackageName()+".provider", photoFile);
+                Uri photoUri = FileProvider.getUriForFile(PhotoActivity.this, PhotoActivity.this.getApplicationContext().getPackageName()+".provider", photoFile);
                 // transfert de l'URI
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                 // On ouvre l'activité
@@ -115,9 +122,9 @@ public class PhotosActivity extends AppCompatActivity {
         // Verification du code de retour
         if(RETOUR_PRISE_PHOTO == requestCode && RESULT_OK == resultCode){
             // On récupère l'image
-            image = BitmapFactory.decodeFile(photoPath);
+            photoBitmap = BitmapFactory.decodeFile(photoPath);
             // Affichage de l'image
-            photoAffichee.setImageBitmap(image);
+            photoAffichee.setImageBitmap(photoBitmap);
         }
     }
 }

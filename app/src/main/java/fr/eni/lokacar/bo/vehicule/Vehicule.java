@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.lokacar.bo.vehicule.enumvehicule.Modele;
+import fr.eni.lokacar.bo.vehicule.photo.Photo;
 
 public class Vehicule implements Parcelable {
 
@@ -14,7 +15,6 @@ public class Vehicule implements Parcelable {
     private Modele modele;
     private String immatriculation;
     private float prixParJour;
-    private List<String> photos;
 
     public Modele getModele() {
         return modele;
@@ -48,19 +48,10 @@ public class Vehicule implements Parcelable {
         this.prixParJour = prixParJour;
     }
 
-    public List<String> getPhotos() {
-        return photos;
-    }
-
-    public void setPhotos(List<String> photos) {
-        this.photos = photos;
-    }
-
 
     public Vehicule(){
         setModele(Modele.CLIO);
         setPrixParJour(0.0f);
-        setPhotos(new ArrayList<String>());
     }
 
     public static final Creator<Vehicule> CREATOR = new Creator<Vehicule>() {
@@ -85,7 +76,6 @@ public class Vehicule implements Parcelable {
         modele = Modele.values()[in.readInt()];
         immatriculation = in.readString();
         prixParJour = in.readFloat();
-        photos = in.createStringArrayList();
     }
 
     @Override
@@ -95,6 +85,5 @@ public class Vehicule implements Parcelable {
         dest.writeInt(modeleParcel);
         dest.writeString(immatriculation);
         dest.writeFloat(prixParJour);
-        dest.writeStringList(photos);
     }
 }

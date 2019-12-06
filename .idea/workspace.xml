@@ -6,21 +6,27 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="POSITIONS" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e74148-9885-4fd7-b8fe-8fd4c516c980" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/photos/PhotosActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/photo_prendre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/provider_path.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/photo/Photo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/PhotoContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/PhotoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/vehicule_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/portail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/portail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/photos/PhotosActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/photo/PhotoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/DetailVehiculeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/DetailVehiculeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/ListeVehiculesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/ListeVehiculesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/Vehicule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/Vehicule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/VehiculeRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/VehiculeRecyclerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/general/BDDHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/general/BDDHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/VehiculeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/VehiculeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/vehicule_dans_liste.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/vehicule_dans_liste.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,81 +54,63 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/client/CreationClientActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/VehiculeRecyclerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="136">
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="43" />
+              <folding>
+                <element signature="e#5245#5246#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/ListeVehiculesActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="214">
+              <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.core/core/1.1.0/4ae37fad1fe95b42aa47a720908df37ba5d3c85e/core-1.1.0-sources.jar!/androidx/core/app/ComponentActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/client/ListeClientsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/location_retour.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/vehicule_detail.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+            <state relative-caret-position="238">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/location_debuter.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/DetailVehiculeActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/vehicule_dans_liste.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+            <state relative-caret-position="204">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/location/LocationDAO.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/PhotoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3077">
-              <caret line="196" column="45" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
+            <state relative-caret-position="299">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,24 +119,60 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/location/DebuterLocationActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/photo/Photo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state relative-caret-position="102">
+              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#455#456#0" expanded="true" />
+                <element signature="e#488#489#0" expanded="true" />
+                <element signature="e#516#517#0" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#584#585#0" expanded="true" />
+                <element signature="e#634#635#0" expanded="true" />
+                <element signature="e#674#675#0" expanded="true" />
+                <element signature="e#705#706#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#804#805#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#926#927#0" expanded="true" />
+                <element signature="e#970#971#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/location/RetourLocationActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/Vehicule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+            <state relative-caret-position="263">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/general/BDDHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/photo/PhotoActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1868#2046#0" expanded="true" />
+                <element signature="e#2045#2046#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,12 +201,25 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/photo_prendre.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/photos/PhotosActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/photoContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/photoDAO.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/PhotoDAO.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/Vehicule.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/photo/Photo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/VehiculeDAO.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/general/BDDHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/photo/PhotoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/VehiculeRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/vehicule_dans_liste.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/vehicule_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/DetailVehiculeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/ListeVehiculesActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
+    <option name="x" value="446" />
+    <option name="y" value="13" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -209,7 +246,106 @@
           <expand>
             <path>
               <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activities" type="462c0819:PsiDirectoryNode" />
+              <item name="vehicule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activities" type="462c0819:PsiDirectoryNode" />
+              <item name="vehicule" type="462c0819:PsiDirectoryNode" />
+              <item name="photo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="bo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="location" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="vehicule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="lokacar" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="vehicule" type="462c0819:PsiDirectoryNode" />
+              <item name="photos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="LokaCar" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -224,7 +360,7 @@
     <property name="android.sdk.path" value="D:/SDK" />
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -342,8 +478,18 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18070363" />
@@ -354,22 +500,23 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Resources Explorer" order="7" weight="0.32995737" />
       <window_info id="Build Variants" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="3" sideWeight="0.50319827" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Find" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50319827" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Build" order="4" sideWeight="0.4968017" weight="0.32936078" />
-      <window_info anchor="bottom" id="Logcat" order="5" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" />
+      <window_info anchor="bottom" id="Logcat" order="5" sideWeight="0.4989339" weight="0.32936078" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.4978678" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4968017" weight="0.32936078" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.32995737" />
       <window_info anchor="right" id="Assistant" order="4" weight="0.3336887" />
-      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
-      <window_info anchor="right" id="Preview" order="6" weight="0.26705757" />
+      <window_info anchor="right" id="Device File Explorer" order="5" sideWeight="0.50080776" side_tool="true" weight="0.26705757" />
+      <window_info anchor="right" id="Preview" order="6" sideWeight="0.49919224" weight="0.26705757" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -431,16 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -452,17 +589,230 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/photos/PhotosActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/client/CreationClientActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+        <state relative-caret-position="850">
+          <caret line="72" column="34" lean-forward="true" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.core/core/1.1.0/4ae37fad1fe95b42aa47a720908df37ba5d3c85e/core-1.1.0-sources.jar!/androidx/core/app/ComponentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1643#2265#0" expanded="true" />
-            <element signature="e#2264#2265#0" expanded="true" />
-            <element signature="e#1704#1854#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/client/ListeClientsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/location_retour.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/location_debuter.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/location/DebuterLocationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/location/RetourLocationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/PhotoContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/VehiculeContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/location/LocationDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1988">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/location/LocationContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/VehiculeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="89" column="103" selection-start-line="89" selection-start-column="103" selection-end-line="89" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/general/BDDHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/photo/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/Vehicule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/photo/PhotoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1868#2046#0" expanded="true" />
+            <element signature="e#2045#2046#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24859" column="16" selection-start-line="24859" selection-start-column="16" selection-end-line="24859" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/vehicule_detail.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/bo/vehicule/VehiculeRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="43" />
+          <folding>
+            <element signature="e#5245#5246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/dao/vehicule/photos/PhotoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/vehicule_dans_liste.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/DetailVehiculeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/eni/lokacar/activities/vehicule/ListeVehiculesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
         </state>
       </provider>
     </entry>

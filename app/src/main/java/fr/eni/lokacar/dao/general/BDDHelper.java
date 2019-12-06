@@ -8,6 +8,7 @@ import android.util.Log;
 import fr.eni.lokacar.dao.client.ClientContract;
 import fr.eni.lokacar.dao.location.LocationContract;
 import fr.eni.lokacar.dao.vehicule.VehiculeContract;
+import fr.eni.lokacar.dao.vehicule.photos.PhotoContract;
 
 
 public class BDDHelper extends SQLiteOpenHelper {
@@ -27,6 +28,7 @@ public class BDDHelper extends SQLiteOpenHelper {
         db.execSQL(VehiculeContract.CREATE_TABLE);
         db.execSQL(ClientContract.CREATE_TABLE);
         db.execSQL(LocationContract.CREATE_TABLE);
+        db.execSQL(PhotoContract.CREATE_TABLE);
     }
 
     @Override
@@ -35,6 +37,7 @@ public class BDDHelper extends SQLiteOpenHelper {
         db.execSQL(VehiculeContract.DROP_TABLE);
         db.execSQL(ClientContract.DROP_TABLE);
         db.execSQL(LocationContract.DROP_TABLE);
+        db.execSQL(PhotoContract.CREATE_TABLE);
         onCreate(db);
     }
 }

@@ -89,9 +89,6 @@ public class VehiculeDAO {
             vehicule.setModele(modele);
             vehicule.setPrixParJour(cursor.getFloat(cursor.getColumnIndex(VehiculeContract.COL_PRIX)));
 
-            // Pour les photos et pour savoir si la voiture est louée, on va vérifier dans d'autre tables.
-            vehicule.setPhotos(new ArrayList<String>());
-
             resultat.add(vehicule);
         }
         return resultat;
