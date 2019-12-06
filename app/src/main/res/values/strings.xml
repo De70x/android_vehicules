@@ -19,4 +19,7 @@
     <string name="adresse">Adresse</string>
     <string name="t_l_phone">Téléphone</string>
     <string name="terminer_la_location">Terminer la location</string>
+    <string name="prendre_une_photo">Prendre une photo</string>
+    <string name="prendre_une_photo_portail">PRENDRE UNE PHOTO</string>
+    <string name="enregistrer_la_photo">Enregistrer la photo</string>
 </resources>
