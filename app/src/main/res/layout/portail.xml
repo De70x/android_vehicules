@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:onClick="ListeVehicules"
+            android:onClick="prisePhoto"
             android:scaleType="centerInside"
             android:src="@drawable/voiture_libre" />
 
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BOUTON INUTILE"
+            android:text="@string/prendre_une_photo_portail"
             android:textAlignment="center" />
     </LinearLayout>
 

@@ -10,9 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import fr.eni.lokacar.R;
+import fr.eni.lokacar.activities.photos.PhotosActivity;
 import fr.eni.lokacar.activities.vehicule.ListeVehiculesActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void ListeVehicules(View view) {
         Intent intent = new Intent(this, ListeVehiculesActivity.class);
+        startActivity(intent);
+    }
+
+    public void prisePhoto(View view) {
+        Intent intent = new Intent(this, PhotosActivity.class);
         startActivity(intent);
     }
 }
