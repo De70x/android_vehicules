@@ -8,9 +8,9 @@ public class LocationContract {
     public static final String TABLE_NAME = "location";
     public static final String COL_ID = "id";
     public static final String COL_VEHICULE_ID = "vehicule_id";
-    public static final String COL_CLIENT_ID = "prenom_id";
-    public static final String COL_DEBUT = "debut";
-    public static final String COL_FIN = "fin";
+    public static final String COL_CLIENT_ID = "client_id";
+    public static final String COL_DEBUT = "date_debut";
+    public static final String COL_FIN = "date_fin";
 
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME
             + " ( " +

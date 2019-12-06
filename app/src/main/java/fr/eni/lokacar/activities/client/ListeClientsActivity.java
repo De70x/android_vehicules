@@ -40,12 +40,10 @@ public class ListeClientsActivity extends AppCompatActivity implements ClientRec
     public void onInteraction(Client client) {
         Intent intentSource = getIntent();
         Long dateDebut = intentSource.getLongExtra("dateDebut", 0);
-        Long dateFin = intentSource.getLongExtra("dateFin", 0);
         Vehicule vehicule = intentSource.getParcelableExtra("vehicule");
 
         Intent intentDest = new Intent(this, DebuterLocationActivity.class);
         intentDest.putExtra("dateDebut", dateDebut);
-        intentDest.putExtra("dateFin", dateFin);
         intentDest.putExtra("client", client);
         intentDest.putExtra("vehicule", vehicule);
         startActivity(intentDest);

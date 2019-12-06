@@ -1,5 +1,6 @@
 package fr.eni.lokacar.bo.vehicule;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import java.util.List;
 import fr.eni.lokacar.R;
 import fr.eni.lokacar.activities.location.DebuterLocationActivity;
 import fr.eni.lokacar.activities.location.RetourLocationActivity;
+import fr.eni.lokacar.dao.location.LocationDAO;
 
 public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecyclerAdapter.VehiculeRecyclerViewHolder> {
     private List<Vehicule> mDataSet;
@@ -65,9 +67,12 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
     @Override
     public void onBindViewHolder(@NonNull VehiculeRecyclerViewHolder holder, final int position) {
 
+        LocationDAO locationDAO = new LocationDAO((Context)action);
+
         /*** MARQUE / MODELE ***/
         String marqueModele = mDataSet.get(position).getModele().getMarque().toString() + " / " + mDataSet.get(position).getModele().toString();
         holder.marque.setText(marqueModele);
+
 
         /*** PRIX ***/
         // On utilise un formateur pour les prix
@@ -94,7 +99,7 @@ public class VehiculeRecyclerAdapter extends RecyclerView.Adapter<VehiculeRecycl
 
         /*** IMAGE BOUTON LOCATION ***/
         // si la voiture est louée on affiche la voiture rouge, sinon on affiche la verte
-        if(mDataSet.get(position).isLoue()){
+        if(locationDAO.isVehiculeLoue((long)mDataSet.get(position).getId())){
             holder.isLouee.setImageResource(R.drawable.voiture_louee);
             holder.isLouee.setOnClickListener(new View.OnClickListener() {
                 @Override

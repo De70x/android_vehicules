@@ -35,7 +35,6 @@ public class CreationClientActivity extends AppCompatActivity {
     public void ajouterClient(View view){
         Intent intentSource = getIntent();
         Long dateDebut = intentSource.getLongExtra("dateDebut", 0);
-        Long dateFin = intentSource.getLongExtra("dateFin", 0);
         Vehicule vehicule = intentSource.getParcelableExtra("vehicule");
         Client client = new Client();
 
@@ -58,7 +57,6 @@ public class CreationClientActivity extends AppCompatActivity {
 
         Intent intentDest = new Intent(this, DebuterLocationActivity.class);
         intentDest.putExtra("dateDebut", dateDebut);
-        intentDest.putExtra("dateFin", dateFin);
         intentDest.putExtra("client", client);
         intentDest.putExtra("vehicule", vehicule);
         startActivity(intentDest);
@@ -67,12 +65,10 @@ public class CreationClientActivity extends AppCompatActivity {
     public void annuler(View view) {
         Intent intentSource = getIntent();
         Long dateDebut = intentSource.getLongExtra("dateDebut", 0);
-        Long dateFin = intentSource.getLongExtra("dateFin", 0);
         Vehicule vehicule = intentSource.getParcelableExtra("vehicule");
 
         Intent intentDest = new Intent(this, DebuterLocationActivity.class);
         intentDest.putExtra("dateDebut", dateDebut);
-        intentDest.putExtra("dateFin", dateFin);
         intentDest.putExtra("vehicule", vehicule);
         startActivity(intentDest);
     }

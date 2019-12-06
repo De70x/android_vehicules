@@ -54,20 +54,18 @@
 
             <Button
                 android:id="@+id/selection_date_debut"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="selectionnerDateDebut"
                 android:text="@string/date_debut" />
             <Button
                 android:id="@+id/selection_date_fin"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="selectionnerDateFin"
-                android:text="@string/date_fin"
-                android:visibility="gone"/>
-
+                android:text="@string/date_fin"/>
         </LinearLayout>
     </LinearLayout>
 

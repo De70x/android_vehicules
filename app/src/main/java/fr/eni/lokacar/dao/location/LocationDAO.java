@@ -38,15 +38,22 @@ public class LocationDAO {
 
         // On met à jour le véhicule
         Vehicule vehicule = location.getVehicule();
-        Log.d("LocationDAO", String.valueOf(isVehiculeLoue((long)vehicule.getId())));
-        vehicule.setLoue(isVehiculeLoue((long)vehicule.getId()));
 
         vehiculeDAO.update(vehicule);
 
         values.put(LocationContract.COL_CLIENT_ID, location.getClient().getId());
         values.put(LocationContract.COL_VEHICULE_ID, location.getVehicule().getId());
         values.put(LocationContract.COL_DEBUT, location.getDateDebut().getTime());
-        values.put(LocationContract.COL_FIN, location.getDateFin().getTime());
+        // S'il n'y a pas de location a venir
+        Date dateFutureLocation = getLocationAVenir((long)vehicule.getId());
+        if(dateFutureLocation == null)
+        {
+            values.put(LocationContract.COL_FIN, (String)null);
+        }
+        else
+        {
+            values.put(LocationContract.COL_FIN, dateFutureLocation.getTime());
+        }
 
         return db.insert(LocationContract.TABLE_NAME,null,values);
     }
@@ -90,8 +97,68 @@ public class LocationDAO {
         return isLoue;
     }
 
-    public Location getLocationAVenir(Long vehicule_id){
-        return null;
+    /**
+     * Si on a loué un véhicule dans le futur, il ne faut pas le bloquer
+     * il faut le rendre disponible jusqu'à la date de début de la première location
+     * on crée donc cette méthode pour récupérer la date de début de la futur location
+     * a laquelle on retire un jour ca sera la date de fin de la location qu'on souhaite
+     * @param vehicule_id
+     * @return
+     */
+    public Date getLocationAVenir(Long vehicule_id){
+        final long UN_JOUR = 1000 * 3600 * 24;
+        Date dateRet = null;
+
+        Cursor cursor = db.query(
+                LocationContract.TABLE_NAME,
+                new String[]{LocationContract.COL_DEBUT},
+                LocationContract.COL_VEHICULE_ID + " =? and " + LocationContract.COL_DEBUT + " > ?",
+                new String[]{String.valueOf(vehicule_id), String.valueOf(new Date().getTime())},
+                null,
+                null,
+                LocationContract.COL_DEBUT);
+
+        if(cursor.moveToNext())
+        {
+            long dateDebut = cursor.getLong(cursor.getColumnIndex(LocationContract.COL_DEBUT));
+            dateRet = new Date(dateDebut - UN_JOUR);
+        }
+
+        return dateRet;
+    }
+
+    public Location getLocationEnCours(Long vehicule_id){
+        Location location = null;
+        long dateDuJour = new Date().getTime();
+        Cursor cursor = db.query(
+                LocationContract.TABLE_NAME,
+                new String[]{LocationContract.COL_ID, LocationContract.COL_CLIENT_ID, LocationContract.COL_VEHICULE_ID, LocationContract.COL_DEBUT, LocationContract.COL_FIN},
+                LocationContract.COL_VEHICULE_ID + " =? and " + LocationContract.COL_DEBUT + " <= ? and (" + LocationContract.COL_FIN + " > ? or " + LocationContract.COL_FIN + " is null)",
+                new String[]{String.valueOf(vehicule_id), String.valueOf(dateDuJour), String.valueOf(dateDuJour)},
+                null,
+                null,
+                null);
+        while(cursor.moveToNext())
+        {
+            location = new Location();
+            location.setId(cursor.getInt(cursor.getColumnIndex(LocationContract.COL_ID)));
+
+            Client client = clientDAO.get(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_CLIENT_ID)));
+            location.setClient(client);
+
+            Vehicule vehicule = vehiculeDAO.get(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_VEHICULE_ID)));
+            location.setVehicule(vehicule);
+
+            Date dateDebut = new Date(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_DEBUT)));
+            location.setDateDebut(dateDebut);
+
+            Date dateFin = null;
+            if(!cursor.isNull(cursor.getColumnIndex(LocationContract.COL_FIN))) {
+                dateFin = new Date(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_FIN)));
+            }
+            location.setDateFin(dateFin);
+        }
+        return location;
     }
 
     public List<Location> getAll()
@@ -102,6 +169,39 @@ public class LocationDAO {
                 new String[]{LocationContract.COL_ID, LocationContract.COL_CLIENT_ID, LocationContract.COL_VEHICULE_ID, LocationContract.COL_DEBUT, LocationContract.COL_FIN},
                 null,
                 null,
+                null,
+                null,
+                null);
+        while(cursor.moveToNext())
+        {
+            Location location = new Location();
+            location.setId(cursor.getInt(cursor.getColumnIndex(LocationContract.COL_ID)));
+
+            Client client = clientDAO.get(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_CLIENT_ID)));
+            location.setClient(client);
+
+            Vehicule vehicule = vehiculeDAO.get(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_VEHICULE_ID)));
+            location.setVehicule(vehicule);
+
+            Date dateDebut = new Date(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_DEBUT)));
+            location.setDateDebut(dateDebut);
+
+            Date dateFin = new Date(cursor.getLong(cursor.getColumnIndex(LocationContract.COL_FIN)));
+            location.setDateFin(dateFin);
+
+            resultat.add(location);
+        }
+        return resultat;
+    }
+
+    public List<Location> getLocationsFutures(Long vehicule_id){
+        List<Location> resultat = new ArrayList<>();
+        long dateDuJour = new Date().getTime();
+        Cursor cursor = db.query(
+                LocationContract.TABLE_NAME,
+                new String[]{LocationContract.COL_ID, LocationContract.COL_CLIENT_ID, LocationContract.COL_VEHICULE_ID, LocationContract.COL_DEBUT, LocationContract.COL_FIN},
+                LocationContract.COL_VEHICULE_ID + " =? and " + LocationContract.COL_DEBUT + " > ?",
+                new String[]{String.valueOf(vehicule_id), String.valueOf(dateDuJour)},
                 null,
                 null,
                 null);
