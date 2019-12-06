@@ -58,13 +58,11 @@ public class PhotosActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ContentValues cv = new ContentValues();
                     cv.put(MediaStore.MediaColumns.DISPLAY_NAME, "nom image");
-                    cv.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+                    cv.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { //this one
-                        cv.put(MediaStore.MediaColumns.RELATIVE_PATH, photoRelativePath)
+                        cv.put(MediaStore.MediaColumns.RELATIVE_PATH, photoRelativePath);
                         cv.put(MediaStore.MediaColumns.IS_PENDING, 1);
                     }
-                }
-                MediaStore.
             }
         });
     }
