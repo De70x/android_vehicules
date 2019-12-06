@@ -52,6 +52,7 @@ public class PhotosActivity extends AppCompatActivity {
     }
 
     // https://www.codota.com/code/java/methods/android.content.ContentValues/put
+    // Il faut peut être passé par objet puis DAO pour Blober l'image
     private void createOnClicSauverPhoto(){
         sauverPhoto.setOnClickListener(new Button.OnClickListener() {
             @Override
